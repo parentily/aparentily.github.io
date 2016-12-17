@@ -1,0 +1,400 @@
+/*Variables*/
+$gutter: 8px;
+
+$bg-color: #FCFCFA;
+$border-color: #F0F0EE;
+$color-white: #fff;
+$color-red: #ED6A5A;
+$color-black: #33303B;
+$color-dark-grey: #6F6D77;
+$color-grey: #FCFCFA;
+$color-purple: #423E4C;
+
+$page-width: 1080px;
+$page-gutter: $gutter * 4;
+
+
+
+
+/* Reset */
+* {
+  position: relative;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  color: $color-black;
+}
+
+
+
+/* Layout */
+body, html {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  overflow-y: auto;
+  background-color: $bg-color;
+}
+
+.page-section {
+  width: 100%;
+
+  &--white {
+      border-top: 1px solid $border-color;
+      border-bottom: 1px solid $border-color;
+      background-color: $color-white;
+  }
+
+  &--dark {
+      background-color: $color-purple;
+  }
+}
+
+.page-content {
+  max-width: $page-width + $page-gutter;
+  padding: 0 $page-gutter;
+  margin: 0 auto;
+}
+
+
+
+/* Button */
+.button {
+  display: inline-block;
+  height: $gutter * 6;
+  padding: ($gutter / 2) ($gutter * 4);
+  color: $color-white;
+  font-size: 16px;
+  line-height: 40px;
+  border-radius: $gutter * 3;
+  background: $color-red;
+  text-decoration: none;
+  font-weight: 300;
+  box-shadow: 0 1px 0 0 rgba(#fff, 0.2) inset;
+  border: none;
+  cursor: pointer;
+
+  &__icon {
+    height: 20px;
+    margin: 9px 12px 11px -10px;
+    float: left;
+  }
+
+  &--right {
+    float: right;
+  }
+
+  &:hover {
+    background: darken($color-red, 3%);
+    box-shadow: 0 1px 0 0 rgba(#fff, 0.2) inset, 0 10px 20px 0 rgba($color-red, 0.2);
+  }
+}
+
+
+/* Typography */
+h1 {
+  font-size: 40px;
+  line-height: 72px;
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 21px;
+  line-height: 40px;
+  font-weight: 300;
+  color: $color-dark-grey;
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 300;
+}
+
+p {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 300;
+}
+
+
+
+/* Input */
+.input {
+  width: 100%;
+  margin: 24px 0;
+
+  .input__field {
+      width: 100%;
+      max-width: 100%;
+      border: none;
+      border-bottom: 2px solid rgba($color-dark-grey, 0.5);
+      border-radius: 0;
+      background: none;
+      padding: 0 0 18px;
+      margin-top: 18px;
+      font-size: 16px;
+      line-height: 24px;
+      min-height: 42px;
+      outline-width: 0;
+      z-index: 2;
+  }
+
+  .input__label {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      font-size: 16px;
+      line-height: 24px;
+      color: $color-dark-grey;
+      transition: all 0.25s ease-out 0s;
+  }
+
+  .input__field:focus,
+  input:not([value=""]),
+  textarea:not([value=""]) {
+    border-bottom: 2px solid $color-dark-grey;
+
+    + .input__label {
+      top: 0;
+      color: $color-black;
+    }
+  }
+}
+
+
+
+/* Header */
+.header {
+  width: 100%;
+  padding: ($gutter * 4) 0;
+  border-bottom: 1px solid $border-color;
+  overflow: hidden; //clearfix
+}
+
+.header__logo {
+  height: $gutter * 7;
+  float: left;
+}
+
+.header__navigation {
+  float: right;
+}
+
+.header__link {
+  display: inline-block;
+  height: $gutter * 6;
+  padding: ($gutter / 2) 0;
+  color: $color-black;
+  font-size: 16px;
+  line-height: 40px;
+  text-decoration: none;
+  margin: 0 $gutter * 4 0 0;
+}
+
+
+
+/* Cover */
+.cover {
+  width: 100%;
+  height: $gutter * 70;
+  padding-top: $gutter * 10;
+  margin-bottom: -$gutter;
+  background-image: url(/images/hero-image.png);
+  background-position: right bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.cover__para {
+  max-width: 475px;
+}
+
+
+/* Companies */
+.companies {
+  width: 100%;
+  padding: ($gutter * 15) 0;
+}
+
+.companies__title {
+  text-align: center;
+  margin-bottom: $gutter * 8;
+}
+
+.companies__images-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.companies__image {
+  display: inline-block;
+  height: $gutter * 7;
+}
+
+
+
+/* Feature */
+.feature {
+  width: 100%;
+  padding: ($gutter * 15) 50% ($gutter * 15) 0;
+  border-bottom: 1px solid $border-color;
+  position: relative;
+}
+
+.feature__title {
+  margin-bottom: $gutter * 3;
+}
+
+.feature__content {
+  max-width: $gutter * 70;
+}
+
+.feature__image {
+  width: 30%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.feature__image--spaced {
+  bottom: auto;
+  top: ($gutter * 15);
+}
+
+
+/* Extras */
+.extras {
+  width: 100%;
+  padding: ($gutter * 15) 0;
+  overflow: hidden; //clearfix
+}
+
+.extras__col {
+  width: 50%;
+  text-align: center;
+  float: left;
+  padding-right: $gutter * 3;
+
+  &:last-child {
+    padding-right: $gutter * 3;
+  }
+}
+
+.extras__title {
+  margin-bottom: $gutter * 1.5;
+}
+
+.extras__content {
+}
+
+.extras__image {
+  display: block;
+  height: $gutter * 12;
+  margin: 0 auto;
+  margin-bottom: ($gutter * 5);
+}
+
+
+
+/* Downloads */
+.downloads {
+  width: 100%;
+  padding: ($gutter * 15) 0;
+  overflow: hidden; //clearfix
+}
+
+.downloads__col {
+  width: 50%;
+  float: left;
+  padding-right: $gutter * 3;
+
+  &:last-child {
+    padding-right: $gutter * 3;
+  }
+}
+
+.downloads__title {
+  margin-bottom: $gutter * 1.5;
+}
+
+.downloads__content {
+}
+
+.downloads__button {
+  float: right;
+  margin-left: ($gutter * 3);
+}
+
+
+
+/* Contact */
+.contact {
+  width: 100%;
+  padding: ($gutter * 15) 0;
+}
+
+.contact__col-wrapper {
+    overflow: hidden; //clearfix
+}
+
+.contact__col {
+  width: 50%;
+  float: left;
+  padding-right: $gutter * 3;
+
+  &:last-child {
+    padding-right: $gutter * 3;
+  }
+}
+
+.contact__title {
+  margin-bottom: $gutter * 1.5;
+}
+
+.contact__content {
+    margin-bottom: $gutter * 3;
+}
+
+
+/* Footer */
+.footer {
+  width: 100%;
+  padding: ($gutter * 5) 0;
+  overflow: hidden; //clearfix
+}
+
+.footer__email,
+.footer__social,
+.footer__link {
+    color: rgba($color-white, 0.7);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.footer__email {
+  float: left;
+}
+
+.footer__social {
+  float: right;
+  color: rgba($color-white, 0.7);
+}
+
+.footer__link {
+  text-decoration: none;
+
+  &:hover {
+    color: rgba($color-white, 0.7);
+  }
+}

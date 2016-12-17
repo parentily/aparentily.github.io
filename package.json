@@ -1,0 +1,15 @@
+{
+  "name": "parentily-website",
+  "version": "1.0.0",
+  "description": "",
+  "author": "nayansuthar365@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-print": "^2.0.1",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.3.1",
+    "yargs": ""
+  }
+}
